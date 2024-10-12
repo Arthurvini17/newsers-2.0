@@ -10,3 +10,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('index');
 Route::get('/tasks_show/{tasks}', [TasksController::class, 'tasks_show'])->name('tasks_show');
+Route::get('/tasks/{tasks}/edit', [TasksController::class, 'tasks_edit'])->name('tasks_edit');
+

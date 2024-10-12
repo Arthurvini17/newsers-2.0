@@ -11,11 +11,13 @@ use Livewire\Component;
 class Index extends Component
 {
 
-    public $count = 1;
+    public $count = '';
 
 
  
-
+public function mount(){
+    $this->count = Tasks::count();
+}
 
     public function render()
     {

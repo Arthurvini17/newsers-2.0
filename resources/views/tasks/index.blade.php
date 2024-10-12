@@ -3,6 +3,9 @@
 
 <livewire:tasks.index>
 
+
 <livewire:tasks.modal>
+
+
 
 </x-layouts.app>

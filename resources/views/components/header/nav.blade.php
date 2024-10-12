@@ -1,5 +1,5 @@
-<header class="bg-slate-800  ">
-    <nav class="text-white flex items-center justify-between p-5">
+<header class="bg-slate-950 ">
+    <nav class="flex items-center justify-between p-5 text-white">
         <div>NEWSERS</div>
         <ul class="flex gap-2">
             @guest
