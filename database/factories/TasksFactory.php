@@ -20,7 +20,7 @@ class TasksFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->name(),
+            'title' => fake()->title(),
             'description' => fake()->realText(),
             'status' => fake()->randomElement(['finished', 'progress']),
             'ends_at' => fake()->dateTimeBetween('now', '3 days'),
