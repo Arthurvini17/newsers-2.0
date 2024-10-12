@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory(50)->create();
-        Tasks::factory(50)->create();
+        User::factory(10)->create();
+        Tasks::factory(10)->create();
           
 
     

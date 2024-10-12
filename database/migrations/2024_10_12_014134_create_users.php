@@ -18,11 +18,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('remember_token')->nullable();
             $table->string('password');
-
+            $table->string('status')->default('active'); 
             $table->timestamps();
         });
     }
-     
 
     /**
      * Reverse the migrations.
@@ -30,7 +29,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
     }
 };
