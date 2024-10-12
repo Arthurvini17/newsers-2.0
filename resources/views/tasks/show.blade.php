@@ -1,5 +1,5 @@
 <div>
     <pre>
-    nome {{$user->name}}
+    nome {{$tasks->name}}
 </pre>
 </div>

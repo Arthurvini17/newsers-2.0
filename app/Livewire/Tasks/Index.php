@@ -1,21 +1,15 @@
 <?php
 
-namespace App\Livewire\Users;
+namespace App\Livewire\Tasks;
 
 use App\Models\Tasks;
-use App\Models\User;
-use Illuminate\Console\View\Components\Task;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
 
 class Index extends Component
 {
 
-    public $count = 1;
-
-
- 
-
+    public  $isOpen = true;
 
     public function render()
     {
@@ -23,7 +17,7 @@ class Index extends Component
     }
 
     #[Computed()]
-    public function users(){
+    public function tasks(){
         return Tasks::query()->inRandomOrder()->get();
     }
 }

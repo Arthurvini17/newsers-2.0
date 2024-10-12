@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\Tasks;
+use App\Http\Controllers\TasksController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\WelcomeController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [UsersController::class, 'index'])->name('users.index');
-Route::get('/user_show/{user}', [UsersController::class, 'users_show'])->name('users_show');
+Route::get('/', [WelcomeController::class, 'index'])->name('index');
+Route::get('/tasks_show/{tasks}', [TasksController::class, 'tasks_show'])->name('tasks_show');

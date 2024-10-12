@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('title');
             $table->longText('description');
             $table->string('status')->default('progress');
-            $table->foreignIdFor(User::class, 'created_by')->constrained('users');
-            $table->dateTime('ends_at');
+            $table->foreignIdFor(User::class, 'created_by')->nullable()->constrained('users');
+            $table->dateTime('ends_at')->nullable();
             $table->timestamps();
         });
     }
