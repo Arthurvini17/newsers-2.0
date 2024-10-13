@@ -28,10 +28,7 @@ class Index extends Component
         ]);
     }
 
-    public function delete(Tasks $tasks){
-        $tasks->delete();
-        return redirect()->route('index');
-    }
+ 
 
     #[Computed()]
     public function tasks(){

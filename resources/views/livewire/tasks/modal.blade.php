@@ -1,4 +1,4 @@
-<div x-data="{ open: @entangle('isOpen') }" class="flex items-center justify-center mt-10 font-normal inset-10">
+<div x-data="{ open: @entangle('isOpen') }" class="flex items-center justify-center mt-10 font-normal inset-10 ">
     <button x-on:click="open = !open" class="text-4xl">+</button>
 
     <div x-show="open">
@@ -10,7 +10,7 @@
             <form wire:submit.prevent="save" class="">
                 @csrf
                 <div class="flex flex-col gap-2">
-                    <div>
+                    <div class="">
                         <label for="title" class="text-white">Titulo da task</label>
                         <input class="w-full p-1 text-white placeholder-gray-400 bg-transparent border-b border-b-gray-100" wire:model="title" type="text"
                             placeholder="titulo da task">

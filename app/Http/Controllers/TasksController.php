@@ -15,11 +15,15 @@ class TasksController extends Controller
         return view('tasks.index');
     }
 
-    public function tasks_edit($tasks) {
-        $tasks = Tasks::findOrFail($tasks); 
-    
-        return view('tasks.edit', compact('tasks')); 
-        
+    public function tasks_delete(Tasks $tasks){
+        $tasks->delete();
+        return redirect()->route('index');
     }
+
+
+    public function tasks_edit(Tasks $tasks) {
+        return view('tasks.edit', ['tasks' => $tasks]); 
+    }
+    
     
 }

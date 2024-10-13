@@ -1,37 +1,27 @@
-<div class="p-10">
+<div class="px-2 mt-10 ont-poppins">
     <div class="grid grid-cols-2 gap-2 ">
         @foreach ($tasks as $task)
-        <div class="h-full border border-collapse text-gray-50 indent-px">
+        <div class="h-full border shadow-sm border-sky-500 text-gray-50 indent-px ">
 
             <div class="">
                 <a href="{{ route('tasks_show', [$task->id]) }}">
-                    <div class="p-2">
+                    <div class="p-1 ml-2">
                         <h1 class=""> Titulo: {{ $task->title }}</h1>
                     </div>
                     <div class="p-2">
-                        <h1 class="w-full h-full "> Descrição: {{ $task->description }}</h1>
+                        <h1 class="h-32 overflow-hidden "> Descrição: {{ $task->description }}</h1>
 
                     </div>
                 </a>
             </div>
 
-
-            <div class="flex items-center justify-center gap-2">
-                <button class="py-1 text-xl font-semibold bg-purple-400 rounded-md">
-                    <a href="{{ route('tasks_edit', $task->id) }}">Edit</a>
-                </button>
-
-                <button class="py-1 text-xl bg-red-700 rounded-md" type="button" wire:click="delete({{ $task->id }})">
-                    Deletar
-                </button>
-            </div>
-
+           
         </div>
         @endforeach
 
 
     </div>
-    <div>
+    <div class="mt-2">
         {{ $tasks->links() }}
 
     </div>
