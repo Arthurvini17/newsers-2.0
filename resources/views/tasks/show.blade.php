@@ -15,5 +15,8 @@
          
             <button type="submit" class="p-1 text-xl font-semibold bg-purple-400 rounded-md">Deletar</button>
         </form>
+
+       
+        
     </div>
 </x-layouts.app>

@@ -25,5 +25,17 @@ class TasksController extends Controller
         return view('tasks.edit', ['tasks' => $tasks]); 
     }
     
-    
-}
+
+    public function tasks_update(Tasks $tasks, Request $request){
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'status' => 'required',
+            'description' => 'required',
+        ]);
+
+        $tasks->update($validatedData);
+
+        return redirect()->route('index');
+
+        }
+    }
