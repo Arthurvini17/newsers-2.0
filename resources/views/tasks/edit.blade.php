@@ -10,13 +10,13 @@
 
             <div class="flex flex-col gap-4 ">
                 <div class="">
-                    <label for="title" class="mb-1 font-sans text-xl font-semibold text-white">Título</label>
+                    <label for="title" class="mb-1 font-sans text-xl font-semibold text-gray-300">Título</label>
                     <input class="w-full p-2 border border-gray-300 rounded-tl-lg" type="text" name="title"
                         value="{{$tasks->title}}">
                 </div>
 
                 <div class="">
-                    <label for="description" class="mb-1 font-semibold text-white">Descrição</label>
+                    <label for="description" class="mb-1 font-semibold text-gray-300">Descrição</label>
                     <textarea name="description" class="w-full p-1 font-bold rounded-tl-lg " id="" cols="30"
                         rows="2">{{$tasks->description}}</textarea>
                 </div>
@@ -31,7 +31,7 @@
                 </div>
 
 
-                <div>
+                <div class="font-semibold ">
                     <select name="status" id="" class="rounded-tl-lg ">
                         <option value="" class="w-full">Task Finalizada?</option>
                         <option class="rounded-tl-lg" value="finished" {{$tasks->status == 'finished' ? 'selected' :

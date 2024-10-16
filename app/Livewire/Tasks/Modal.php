@@ -10,7 +10,7 @@ use Livewire\Component;
 class Modal extends Component
 {
 
-    public $isOpen = false;
+    public $isOpen = true;
 
     // #[Validate('required', message: 'teste')]
     public $title = '';
@@ -33,6 +33,8 @@ public $status = 'Progress';
     //     return $this->redirect('/');
     // }
 
+
+ 
 
 
     public function save()
@@ -59,4 +61,5 @@ public $status = 'Progress';
     {
         return view('livewire.tasks.modal');
     }
+
 }

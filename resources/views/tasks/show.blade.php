@@ -2,6 +2,7 @@
     <p>view show2</p>
     <p>{{$tasks->title}}</p>
     <p>{{$tasks->description}}</p>
+    <p>{{$tasks->created_at}}</p>
 
     <div class="flex items-center justify-center gap-2 mb-2">
         <button class="p-1 text-xl font-semibold bg-purple-400 rounded-md">
@@ -13,10 +14,8 @@
             @method('DELETE')
             @csrf
          
-            <button type="submit" class="p-1 text-xl font-semibold bg-purple-400 rounded-md">Deletar</button>
+            <button type="submit" class="p-1 text-xl font-semibold bg-red-400 border border-red-900 rounded-md">Deletar</button>
         </form>
-
-       
         
     </div>
 </x-layouts.app>
