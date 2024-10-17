@@ -1,7 +1,8 @@
 <div class="px-2 mt-10 font-poppins">
 
-    <p>Total de Tasks: {{ $taskscount }}</p>
-
+    <div class="mb-2">
+    <p class="text-sm text-white">Total de Tasks: {{ $taskscount }}</p>
+</div>
     <div class="grid grid-cols-2 gap-2 ">
         @foreach ($tasks as $task)
         <div class="h-full border shadow-sm border-sky-500 text-gray-50 indent-px ">
@@ -22,9 +23,8 @@
 
 
     </div>
-    <div class="mt-28">
+    <div class="mt-20">
         {{ $tasks->links() }}
-
     </div>
 
     <div>

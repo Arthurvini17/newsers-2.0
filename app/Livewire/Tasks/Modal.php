@@ -41,11 +41,12 @@ public $status = 'Progress';
     {
         $validateDate = $this->validate([
             'title' => 'required|min:3',
-            'description' => 'required',
+            'description' => 'required|max:10',
             'status' => 'required'
         ], [
             'title.required' => 'Adicione um nome para sua task',
             'description.required' => 'Adicione uma descrição',
+            'description.max' => 'Descrição muito grande',
             'status.required' => 'Selecione a opção',
         ]);
 

@@ -23,7 +23,7 @@ class Index extends Component
     public function render()
     {
         return view('livewire.tasks.index',[
-            'tasks' => Tasks::orderBy('created_at', 'desc')->simplePaginate(4),
+            'tasks' => Tasks::orderBy('created_at', 'desc')->simplePaginate(6),
             'taskscount' => $this->count,
         ]);
     }
