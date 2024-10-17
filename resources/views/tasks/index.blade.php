@@ -1,11 +1,8 @@
 <x-layouts.app class="">
-    <x-header.nav/>
-
-<livewire:tasks.index>
-
-
-<livewire:tasks.modal>
-
+    <x-header.nav />
+    
+    <livewire:tasks.modal>
+    <livewire:tasks.index>
 
 
 </x-layouts.app>

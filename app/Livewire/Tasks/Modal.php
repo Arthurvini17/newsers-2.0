@@ -10,7 +10,7 @@ use Livewire\Component;
 class Modal extends Component
 {
 
-    public $isOpen = true;
+    public $isOpen = false;
 
     // #[Validate('required', message: 'teste')]
     public $title = '';
@@ -42,11 +42,11 @@ public $status = 'Progress';
         $validateDate = $this->validate([
             'title' => 'required|min:3',
             'description' => 'required',
-            'status' => 'required',
+            'status' => 'required'
         ], [
-            'title.required' => 'campo obrigatorio',
-            'description.required' => 'campo obrigatorio',
-            'status' => 'Marque a opção',
+            'title.required' => 'Adicione um nome para sua task',
+            'description.required' => 'Adicione uma descrição',
+            'status.required' => 'Selecione a opção',
         ]);
 
         Tasks::create($validateDate);
