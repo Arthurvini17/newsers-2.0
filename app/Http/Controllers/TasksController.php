@@ -31,6 +31,10 @@ class TasksController extends Controller
             'title' => 'required',
             'status' => 'required',
             'description' => 'required',
+        ],[
+            'title.required' => 'Digite algo no campo para atualizar',
+            'status.required' => 'Selecione uma opção para atualizar',
+            'description.required' => 'Digite uma descrição para atualizar',
         ]);
 
         $tasks->update($validatedData);

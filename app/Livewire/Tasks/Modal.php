@@ -41,7 +41,7 @@ public $status = 'Progress';
     {
         $validateDate = $this->validate([
             'title' => 'required|min:3',
-            'description' => 'required|max:10',
+            'description' => 'required|max:150',
             'status' => 'required'
         ], [
             'title.required' => 'Adicione um nome para sua task',

@@ -1,4 +1,5 @@
 <div class="px-2 mt-10 font-poppins">
+    <livewire:tasks.modal>
 
     <div class="mb-2">
     <p class="text-sm text-white">Total de Tasks: {{ $taskscount }}</p>
