@@ -13,8 +13,9 @@
 
     <title>{{ $title ?? 'inicio' }}</title>
 </head>
-<body class="bg-slate-800">
+<body class=" bg-slate-800">
     {{ $slot }}
     @livewireScripts
+
 </body>
 </html>
