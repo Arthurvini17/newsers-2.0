@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -10,7 +11,10 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
+
     public function index_register(){
         return view('auth.register');
     }
+  
+
 }

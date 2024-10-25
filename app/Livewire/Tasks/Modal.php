@@ -18,7 +18,7 @@ class Modal extends Component
     // #[Validate('required', message: 'teste2')]
     public $description = '';
 
-public $status = 'Progress';
+    public $status = 'Progress';
 
 
 
@@ -27,14 +27,14 @@ public $status = 'Progress';
     //     Tasks::create(
     //         $this->only(['title', 'description', 'status'])
     //     );
- 
+
     //     session()->flash('status', 'Post successfully updated.');
- 
+
     //     return $this->redirect('/');
     // }
 
 
- 
+
 
 
     public function save()
@@ -62,5 +62,4 @@ public $status = 'Progress';
     {
         return view('livewire.tasks.modal');
     }
-
 }
