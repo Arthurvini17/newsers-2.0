@@ -4,7 +4,7 @@
         <ul class="flex gap-2">
             @guest
             <li><a href="">Login</a></li>
-            <li><a href="">Registro</a></li>
+            <li><a href="{{route('index_register')}}">Registro</a></li>
             @endguest
             <li></li>
             @auth
