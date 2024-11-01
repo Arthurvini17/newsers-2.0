@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class AuthController extends Controller
 {
@@ -14,24 +15,28 @@ class AuthController extends Controller
     }
 
 
-    public function auth_user(Request $request){
+    public function auth_user(Request $request)
+    {
+        // Valida os dados de entrada
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
+        ],[
+            'email.required' => 'teste',
+            'password.required' => 'teste',
         ]);
-
-        if(Auth::attempt([$credentials]))
-        {
+    
+        if (FacadesAuth::attempt($credentials)) {
             $request->session()->regenerate();
-
+    
             return redirect()->route('index');
         }
-
-
+    
         return back()->withErrors([
             'email' => 'email deu erro'
         ]);
     }
+    
 
 
     public function index_register()
@@ -41,7 +46,7 @@ class AuthController extends Controller
 
     public function user_register(Request $request, User $user)
     {
-        $user = $request->validate([
+        $userData = $request->validate([
             'name' => ['required'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required'],
@@ -51,6 +56,13 @@ class AuthController extends Controller
             'email.required' => 'Esse campo deve ser preenchido',
             'email.unique' => 'Esse email ja existe',
             'password.required' => 'Esse campo deve ser preenchido',
+        ]);
+
+
+        $user = User::create([
+            'name' => $userData['name'],
+            'email' => $userData['email'],
+            'password' => bcrypt($userData['password']),
         ]);
 
         if ($user) {

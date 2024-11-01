@@ -8,6 +8,8 @@
             @endguest
             <li></li>
             @auth
+            <li><p>Olá, {{ Auth::user()->name }}</p></li>
+
             <li><a href="#">Sair</a></li>
         @endauth
         </ul>

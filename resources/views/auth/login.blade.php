@@ -6,12 +6,20 @@
                 <h1 class="text-white">NEWSERS</h1>
             </div>
             <div class="">
-                <form action="auth_user" class="flex flex-col gap-2">
+                <form action="{{ route('auth_user') }}" method="POST" class="flex flex-col gap-2">
+
+                    @csrf
                     <div class="text-white">
                         <label for="name">Username</label>
                         <input
                             class="w-full p-2 bg-transparent border-b rounded-tl-lg focus:ring-2 focus:outline-none focus:ring-purple-400"
                             type="text" name="name" placeholder="Digite o nome do usuario">
+
+                            @error('name')
+                            <p>{{$message}}</p>
+                            @enderror
+
+
                     </div>
 
 
@@ -20,12 +28,21 @@
                         <input
                             class="w-full p-2 bg-transparent border-b rounded-tl-lg focus:ring-2 focus:outline-none focus:ring-purple-400"
                             type="email" name="email" placeholder="Digite o nome do usuario">
+
+                            @error('email')
+                            <p>{{$message}}</p>
+                            @enderror
+
                     </div>
 
                     <div class="text-white">
                         <label for="password">Password</label>
                         <input class="w-full p-2 bg-transparent border-b border-gray-300" type="password"
                             name="password" placeholder="Digite a senha do usuario">
+
+                            @error('password')
+                            <p>{{$message}}</p>
+                            @enderror
                     </div>
 
                     <div class="flex items-center justify-center mt-2 text-white">
