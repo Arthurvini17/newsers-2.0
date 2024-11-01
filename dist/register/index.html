@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <script type="module" src="https://newsers.test:5173/@vite/client" data-navigate-track="reload"></script><link rel="stylesheet" href="https://newsers.test:5173/resources/css/app.css" data-navigate-track="reload" /><script type="module" src="https://newsers.test:5173/resources/js/app.js" data-navigate-track="reload"></script>
+    <title>inicio</title>
+</head>
+<body class=" bg-slate-800">
+    <div>
+        <header class="bg-slate-950 ">
+    <nav class="flex items-center justify-between p-5 text-white">
+        <div>NEWSERS</div>
+        <ul class="flex gap-2">
+                        <li><a href="">Login</a></li>
+            <li><a href="http://newsers.test/register">Registro</a></li>
+                        <li></li>
+                    </ul>
+    </nav>
+</header>        <div class="flex flex-col items-center justify-center gap-2 font-poppins">
+            <div class="mt-10 text-2xl">
+                <h1 class="text-white">NEWSERS</h1>
+            </div>
+            <div class="">
+                <form  action="http://newsers.test/register" method="POST" class="flex flex-col gap-2">
+                    <input type="hidden" name="_token" value="ypCWPsgZSF92jlX3XWoppCHcdfCv5ptY2S1VNR5a" autocomplete="off">                    
+                    <div class="text-white">
+                        <label for="name">Username</label>
+                        <input
+                            class="w-full p-2 bg-transparent border-b rounded-tl-lg focus:ring-2 focus:outline-none focus:ring-purple-400"
+                            type="text"  placeholder="Digite o nome do usuario" name="name">
+                                                </div>
+
+                    <div class="text-white">
+                        <label for="email">Email</label>
+                        <input
+                            class="w-full p-2 bg-transparent border-b rounded-tl-lg focus:ring-2 focus:outline-none focus:ring-purple-400"
+                            type="email"  placeholder="Digite o email do usuario" name="email">
+                                                </div>
+
+                    <div class="text-white">
+                        <label for="password">Password</label>
+                        <input class="w-full p-2 bg-transparent border-b border-gray-300" type="password"
+                            placeholder="Digite a senha do usuario" name="password">
+                                                </div>
+
+                    <div class="flex items-center justify-center mt-2 text-white">
+                        <button class="w-full px-4 py-2 font-semibold bg-purple-400 rounded-tl-lg rounded-br-lg">
+                            Criar conta
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="mt-10 ">
+            <div class="text-center ">
+                <p class="inline-block text-2xl font-semibold text-white border-b ">Faça seu login com</p>
+            </div>
+
+            <div class="flex items-center justify-center gap-6 mt-4">
+                <div class="flex items-center justify-center ">
+                    <img src="http://newsers.test/images/google.png" alt="Google" class="w-1/2">
+                </div>
+
+                <div class="flex items-center justify-center ">
+                    <img src="http://newsers.test/images/facebook.png" alt="Facebook" class="w-1/2">
+                </div>
+
+                <div class="flex items-center justify-center ">
+                    <img src="http://newsers.test/images/linkedin.png" alt="LinkedIn" class="w-1/2">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Livewire Scripts -->
+<script src="http://newsers.test/vendor/livewire/livewire.js?id=38dc8241"   data-csrf="ypCWPsgZSF92jlX3XWoppCHcdfCv5ptY2S1VNR5a" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+</body>
+</html>

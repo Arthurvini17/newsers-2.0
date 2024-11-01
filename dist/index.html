@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <script type="module" src="https://newsers.test:5173/@vite/client" data-navigate-track="reload"></script><link rel="stylesheet" href="https://newsers.test:5173/resources/css/app.css" data-navigate-track="reload" /><script type="module" src="https://newsers.test:5173/resources/js/app.js" data-navigate-track="reload"></script>
+    <title>inicio</title>
+</head>
+<body class=" bg-slate-800">
+    <header class="bg-slate-950 ">
+    <nav class="flex items-center justify-between p-5 text-white">
+        <div>NEWSERS</div>
+        <ul class="flex gap-2">
+                        <li><a href="">Login</a></li>
+            <li><a href="http://newsers.test/register">Registro</a></li>
+                        <li></li>
+                    </ul>
+    </nav>
+</header>    <div wire:snapshot="{&quot;data&quot;:{&quot;count&quot;:38,&quot;paginators&quot;:[{&quot;page&quot;:1},{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;kBQch9FpkN2FVHQfr0Yd&quot;,&quot;name&quot;:&quot;tasks&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:{&quot;lw-1505506192-0&quot;:[&quot;div&quot;,&quot;ePo1FVo8XkFfRPO57ZTy&quot;]},&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;49537b19e235f400943b179ae158facf32c8f568afed3f6f1b1b4d6103d56616&quot;}" wire:effects="{&quot;url&quot;:{&quot;paginators.page&quot;:{&quot;as&quot;:&quot;page&quot;,&quot;use&quot;:&quot;push&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null}}}" wire:id="kBQch9FpkN2FVHQfr0Yd" class="px-2 mt-10 font-poppins">
+    <div wire:snapshot="{&quot;data&quot;:{&quot;isOpen&quot;:false,&quot;title&quot;:&quot;&quot;,&quot;description&quot;:&quot;&quot;,&quot;status&quot;:&quot;Progress&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;ePo1FVo8XkFfRPO57ZTy&quot;,&quot;name&quot;:&quot;tasks.modal&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;de69f31fe097fc8b79946cc78fe7d4838c8cc8737465afb06de7660ef9ce7f84&quot;}" wire:effects="[]" wire:id="ePo1FVo8XkFfRPO57ZTy" x-data="{ open: $wire.entangle('isOpen').live }" class="font-poppins">
+    <div class="flex justify-center mt-3 ">
+    <button x-on:click="open = true" class="flex text-xl text-center text-white sle">Adicionar</button>
+</div>
+
+    <div x-show="open" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75"
+         x-on:click.outside="open = false" x-transition>
+        <div class="p-6 rounded-lg shadow-lg bg-slate-800" x-on:click.stop>
+            <div class="text-xl text-white">
+                <h1 class="text-center">Crie sua Task</h1>
+                <div class="text-end">
+                    <button class="text-xl text-red-400 hover:text-red-600" x-on:click="open = false">Fechar</button>
+                </div>
+            </div>
+
+            <div>
+                <form wire:submit.prevent="save" class="p-2">
+                    <input type="hidden" name="_token" value="ypCWPsgZSF92jlX3XWoppCHcdfCv5ptY2S1VNR5a" autocomplete="off">                    <div class="flex flex-col gap-2">
+                        <div>
+                            <label for="title" class="text-gray-300">Título da task</label>
+                            <input
+                                class="w-full p-1 font-semibold border-b rounded-tl-lg rounded-br-lg border-b-gray-100"
+                                wire:model="title" type="text">
+                            <div>
+                                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="description" class="text-gray-300">Descrição da task</label>
+                            <textarea
+                                class="w-full font-semibold border-b rounded-tl-lg rounded-br-lg border-b-gray-100"
+                                wire:model="description" cols="30" rows="2"></textarea>
+                            <div>
+                                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+                            </div>
+                        </div>
+
+                        <div>
+                        <select name="status" id="status" wire:model="status">
+                            <option value="">Selecione uma opção</option>
+                            <option value="progress" >Em andamento</option>
+                            <option value="finished" >Finalizado</option>
+                        </select>
+
+                        <div>
+                            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+                        </div>
+
+                    </div>
+                        <button type="submit"
+                                class="p-1 font-bold text-white bg-purple-700 border border-purple-400 rounded-tl-lg rounded-br-lg"
+                                wire:loading.attr="disabled">Salvar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="mb-2">
+    <p class="text-sm text-white">Total de Tasks: 38</p>
+</div>
+    <div class="grid grid-cols-2 gap-2 ">
+        <!--[if BLOCK]><![endif]-->        <div class="h-full border shadow-sm border-sky-500 text-gray-50 indent-px ">
+
+            <div class="">
+                <a href="http://newsers.test/tasks_show/56">
+                    <div class="p-1 ml-2">
+                        <h1 class=""> Titulo: Mr.</h1>
+                    </div>
+                    <div class="p-2">
+                        <h1 class="h-32 overflow-hidden break-words ">  Dormouse went on, taking first one side and then she walked on in a loud, indignant voice, but she felt unhappy. &#039;It was the fan and two or three of her own children. &#039;How should I know?&#039; said.</h1>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+                <div class="h-full border shadow-sm border-sky-500 text-gray-50 indent-px ">
+
+            <div class="">
+                <a href="http://newsers.test/tasks_show/64">
+                    <div class="p-1 ml-2">
+                        <h1 class=""> Titulo: testando</h1>
+                    </div>
+                    <div class="p-2">
+                        <h1 class="h-32 overflow-hidden break-words ">  Escrever um texto curto, com exatas cem letras, exige criatividade e foco. Cada palavra deve ter um propósito claro!</h1>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+                <div class="h-full border shadow-sm border-sky-500 text-gray-50 indent-px ">
+
+            <div class="">
+                <a href="http://newsers.test/tasks_show/63">
+                    <div class="p-1 ml-2">
+                        <h1 class=""> Titulo: testando modal</h1>
+                    </div>
+                    <div class="p-2">
+                        <h1 class="h-32 overflow-hidden break-words ">  teste testando teste testando teste testando teste testando</h1>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+                <div class="h-full border shadow-sm border-sky-500 text-gray-50 indent-px ">
+
+            <div class="">
+                <a href="http://newsers.test/tasks_show/62">
+                    <div class="p-1 ml-2">
+                        <h1 class=""> Titulo: testando modal</h1>
+                    </div>
+                    <div class="p-2">
+                        <h1 class="h-32 overflow-hidden break-words ">  teste</h1>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+                <div class="h-full border shadow-sm border-sky-500 text-gray-50 indent-px ">
+
+            <div class="">
+                <a href="http://newsers.test/tasks_show/53">
+                    <div class="p-1 ml-2">
+                        <h1 class=""> Titulo: Dr.</h1>
+                    </div>
+                    <div class="p-2">
+                        <h1 class="h-32 overflow-hidden break-words ">  Dormouse&#039;s place, and Alice rather unwillingly took the opportunity of showing off a head could be NO mistake about it: it was very likely true.) Down, down, down. There was a table, with a little.</h1>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+                <div class="h-full border shadow-sm border-sky-500 text-gray-50 indent-px ">
+
+            <div class="">
+                <a href="http://newsers.test/tasks_show/55">
+                    <div class="p-1 ml-2">
+                        <h1 class=""> Titulo: Prof.</h1>
+                    </div>
+                    <div class="p-2">
+                        <h1 class="h-32 overflow-hidden break-words ">  On various pretexts they all looked so good, that it was growing, and very soon finished off the mushroom, and her eyes immediately met those of a muchness&quot;--did you ever saw. How she longed to get.</h1>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--[if ENDBLOCK]><![endif]-->
+
+
+    </div>
+    <div class="mt-20">
+        <div>
+    <!--[if BLOCK]><![endif]-->        <nav role="navigation" aria-label="Pagination Navigation" class="flex justify-between">
+            <span>
+                
+                <!--[if BLOCK]><![endif]-->                    <span class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default leading-5 rounded-md dark:text-gray-600 dark:bg-gray-800 dark:border-gray-600">
+                        &laquo; Previous
+                    </span>
+                <!--[if ENDBLOCK]><![endif]-->
+            </span>
+
+            <span>
+                
+                <!--[if BLOCK]><![endif]-->                    <!--[if BLOCK]><![endif]-->                        <button type="button" wire:click="nextPage('page')" x-on:click="   ($el.closest(&#039;body&#039;) || document.querySelector(&#039;body&#039;)).scrollIntoView()" wire:loading.attr="disabled" dusk="nextPage" class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-blue-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:focus:border-blue-700 dark:active:bg-gray-700 dark:active:text-gray-300">
+                                Next &raquo;
+                        </button>
+                    <!--[if ENDBLOCK]><![endif]-->
+                <!--[if ENDBLOCK]><![endif]-->
+            </span>
+        </nav>
+    <!--[if ENDBLOCK]><![endif]-->
+</div>
+
+    </div>
+
+    <div>
+
+    </div>
+</div>
+    <!-- Livewire Scripts -->
+<script src="http://newsers.test/vendor/livewire/livewire.js?id=38dc8241"   data-csrf="ypCWPsgZSF92jlX3XWoppCHcdfCv5ptY2S1VNR5a" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+</body>
+</html>
